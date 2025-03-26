@@ -1,0 +1,33 @@
+﻿<Window x:Class="RouletteApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Roulette Results" MinWidth="800" MinHeight="600" 
+        Width="800" Height="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5">
+            <TextBlock Text="Last 10 Results" HorizontalAlignment="Center" />
+        </Border>
+
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Add random result" Margin="5" />
+                <Button Content="Show notification" Margin="5" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" Margin="5">
+            <TextBlock Text="Statistics" HorizontalAlignment="Center" />
+        </Border>
+
+        <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5">
+            <TextBlock Text="Notification" HorizontalAlignment="Center" />
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Assignments\\Game Global\\RouletteApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\rouletteapp\\model\\rouletteresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:model\\rouletteresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\rouletteapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\rouletteapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\rouletteapp\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 270,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "F:\\Assignments\\Game Global\\RouletteApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "F:\\Assignments\\Game Global\\RouletteApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T12:01:32.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "F:\\Assignments\\Game Global\\RouletteApp\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
+              "ToolTip": "F:\\Assignments\\Game Global\\RouletteApp\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T11:52:32.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RouletteResult.cs",
+              "DocumentMoniker": "F:\\Assignments\\Game Global\\RouletteApp\\Model\\RouletteResult.cs",
+              "RelativeDocumentMoniker": "Model\\RouletteResult.cs",
+              "ToolTip": "F:\\Assignments\\Game Global\\RouletteApp\\Model\\RouletteResult.cs",
+              "RelativeToolTip": "Model\\RouletteResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T11:51:17.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "F:\\Assignments\\Game Global\\RouletteApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "F:\\Assignments\\Game Global\\RouletteApp\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-26T11:45:29.999Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
