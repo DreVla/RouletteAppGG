@@ -360,3 +360,6 @@ Temporary Items
 # Exceptions to the exclusions
 !src/Microsoft.DotNet.Wpf/src/WpfGfx/codegen/mcg/main/*.rsp
 !src/Microsoft.DotNet.Wpf/src/WpfGfx/tools/csp/**/*.rsp
+/.vs/RouletteApp/CopilotIndices/17.13.441.19478/CodeChunks.db
+/.vs/RouletteApp/CopilotIndices/17.13.441.19478/CodeChunks.db
+/.vs/RouletteApp/CopilotIndices/17.13.441.19478/CodeChunks.db-wal

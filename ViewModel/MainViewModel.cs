@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 using RouletteApp.Model;
 
 namespace RouletteApp.ViewModel
@@ -14,22 +16,48 @@ namespace RouletteApp.ViewModel
     {
         public ObservableCollection<RouletteResult> _results { get; set; } = new ObservableCollection<RouletteResult>();
         private Random _random = new Random();
+        private string _notificationText;
+        private bool _isNotificationVisible;
 
-        public ObservableCollection<RouletteResult> results
+        public ObservableCollection<RouletteResult> Results
         {
             get => _results;
             set
             {
                 _results = value;
-                OnPropertyChanged(nameof(results));
+                OnPropertyChanged(nameof(Results));
+            }
+        }
+
+        public string NotificationText
+        {
+            get => _notificationText;
+            set
+            {
+                _notificationText = value;
+                OnPropertyChanged(nameof(NotificationText));
+                Console.WriteLine($"NotificationText changed to: {_notificationText}");
+            }
+        }
+
+        public bool IsNotificationVisible
+        {
+            get => _isNotificationVisible;
+            set
+            {
+                _isNotificationVisible = value;
+                OnPropertyChanged(nameof(IsNotificationVisible));
+                Console.WriteLine($"IsNotificationVisible changed to: {_isNotificationVisible}");
             }
         }
 
         public ICommand AddResultCommand { get; }
+        public ICommand ShowNotificationCommand { get; }
 
         public MainViewModel()
         {
             AddResultCommand = new RelayCommand(AddResult);
+            ShowNotificationCommand = new RelayCommand(ShowNotification);
         }
 
         private void AddResult()
@@ -38,30 +66,42 @@ namespace RouletteApp.ViewModel
             string color = GetColor(position);
 
             var newResult = new RouletteResult { position = position, color = color, multiplier = 0 };
-            results.Add(newResult);
-            if (results.Count > 10) results.RemoveAt(0);
+            Results.Add(newResult);
+            if (Results.Count > 10) Results.RemoveAt(0);
 
             int streak = CalculateStreak(color);
             newResult.multiplier = position * streak; 
-            OnPropertyChanged(nameof(results)); 
+            OnPropertyChanged(nameof(Results)); 
         }
 
 
         private int CalculateStreak(string currentColor)
         {
             int streak = 0;
-            for (int i = results.Count - 1; i >= 0; i--)
+            for (int i = Results.Count - 1; i >= 0; i--)
             {
-                if (results[i].color == currentColor) streak++;
+                if (Results[i].color == currentColor) streak++;
                 else break;
             }
             return streak;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        private void ShowNotification()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            NotificationText = "Player VIP PlayerName has joined the table.";
+            IsNotificationVisible = true;
+            Console.WriteLine("Showing notification...");
+
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(5)
+            };
+            timer.Tick += (s, e) =>
+            {
+                IsNotificationVisible = false;
+                timer.Stop();
+            };
+            timer.Start();
         }
 
         public class RelayCommand : ICommand
