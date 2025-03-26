@@ -46,8 +46,7 @@
               "RelativeToolTip": "Utils\\OddEvenColorConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:39:21.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T12:39:21.879Z"
             },
             {
               "$type": "Document",
@@ -58,8 +57,7 @@
               "ToolTip": "F:\\Assignments\\Game Global\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-26T11:45:29.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T11:45:29.999Z"
             },
             {
               "$type": "Document",
@@ -71,8 +69,7 @@
               "RelativeToolTip": "ViewModel\\ViewModelBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:07:45.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T12:07:45.114Z"
             },
             {
               "$type": "Document",
@@ -84,8 +81,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:01:32.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T12:01:32.776Z"
             },
             {
               "$type": "Document",
@@ -93,9 +89,9 @@
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
-              "ToolTip": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs*",
-              "RelativeToolTip": "ViewModel\\MainViewModel.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvywAAAA2AAAAAAAAAA==",
+              "ToolTip": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T11:52:32.825Z",
               "EditorCaption": ""
@@ -110,8 +106,7 @@
               "RelativeToolTip": "Model\\RouletteResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T11:51:17.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T11:51:17.585Z"
             }
           ]
         }
