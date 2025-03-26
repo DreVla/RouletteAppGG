@@ -11,6 +11,6 @@ namespace RouletteApp.Model
         public int position { get; set; }
         public string color { get; set; }
         public int streak { get; set; }
-        public int multiplier => position * streak;
+        public int multiplier { get; set; }
     }
 }
