@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouletteApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+217a75685af52f4d22819c987a23304baee8f6c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dce9794e3d97d4f47ef4fed6416e44995ff20816")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouletteApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouletteApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
