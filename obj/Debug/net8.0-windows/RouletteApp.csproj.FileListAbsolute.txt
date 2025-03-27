@@ -23,3 +23,10 @@ F:\Assignments\Game Global\bin\Debug\net8.0-windows\RouletteApp.runtimeconfig.js
 F:\Assignments\Game Global\bin\Debug\net8.0-windows\RouletteApp.pdb
 F:\Assignments\Game Global\obj\Debug\net8.0-windows\RouletteApp.genruntimeconfig.cache
 F:\Assignments\Game Global\obj\Debug\net8.0-windows\ref\RouletteApp.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\xunit.abstractions.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\xunit.runner.visualstudio.testadapter.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\Castle.Core.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\Moq.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\xunit.assert.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\xunit.core.dll
+F:\Assignments\Game Global\bin\Debug\net8.0-windows\xunit.execution.dotnet.dll
