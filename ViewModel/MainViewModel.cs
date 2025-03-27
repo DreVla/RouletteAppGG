@@ -1,24 +1,29 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using Newtonsoft.Json;
 using RouletteApp.Model;
 
 namespace RouletteApp.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        public ObservableCollection<RouletteResult> _results { get; set; } = new ObservableCollection<RouletteResult>();
         private Random _random = new Random();
-        private string _notificationText;
-        private bool _isNotificationVisible;
+        private TcpListener _tcpListener;
+        private bool _isRunning;
 
+        public ObservableCollection<RouletteResult> _results { get; set; } = new ObservableCollection<RouletteResult>();
         public ObservableCollection<RouletteResult> Results
         {
             get => _results;
@@ -28,7 +33,7 @@ namespace RouletteApp.ViewModel
                 OnPropertyChanged(nameof(Results));
             }
         }
-
+        private string _notificationText;
         public string NotificationText
         {
             get => _notificationText;
@@ -36,10 +41,10 @@ namespace RouletteApp.ViewModel
             {
                 _notificationText = value;
                 OnPropertyChanged(nameof(NotificationText));
-                Console.WriteLine($"NotificationText changed to: {_notificationText}");
             }
         }
 
+        private bool _isNotificationVisible;
         public bool IsNotificationVisible
         {
             get => _isNotificationVisible;
@@ -47,7 +52,30 @@ namespace RouletteApp.ViewModel
             {
                 _isNotificationVisible = value;
                 OnPropertyChanged(nameof(IsNotificationVisible));
-                Console.WriteLine($"IsNotificationVisible changed to: {_isNotificationVisible}");
+            }
+        }
+
+        private int _activePlayerCount;
+        public int ActivePlayerCount
+        {
+            get => _activePlayerCount;
+            set
+            {
+                _activePlayerCount = value;
+                OnPropertyChanged(nameof(ActivePlayerCount));
+                System.Diagnostics.Debug.WriteLine($"ActivePlayerCount set to: {value}");
+            }
+        }
+
+        private int _biggestMultiplier;
+        public int BiggestMultiplier
+        {
+            get => _biggestMultiplier;
+            set
+            {
+                _biggestMultiplier = value;
+                OnPropertyChanged(nameof(BiggestMultiplier));
+                System.Diagnostics.Debug.WriteLine($"BiggestMultiplier set to: {value}");
             }
         }
 
@@ -58,10 +86,11 @@ namespace RouletteApp.ViewModel
         {
             AddResultCommand = new RelayCommand(AddResult);
             ShowNotificationCommand = new RelayCommand(ShowNotification);
+            Task.Run(StartTcpListener);
         }
 
         private void AddResult()
-        {
+        { 
             int position = _random.Next(0, 37);
             string color = GetColor(position);
 
@@ -71,7 +100,6 @@ namespace RouletteApp.ViewModel
 
             int streak = CalculateStreak(color);
             newResult.multiplier = position * streak; 
-            OnPropertyChanged(nameof(Results)); 
         }
 
 
@@ -90,7 +118,6 @@ namespace RouletteApp.ViewModel
         {
             NotificationText = "Player VIP PlayerName has joined the table.";
             IsNotificationVisible = true;
-            Console.WriteLine("Showing notification...");
 
             DispatcherTimer timer = new DispatcherTimer
             {
@@ -102,6 +129,58 @@ namespace RouletteApp.ViewModel
                 timer.Stop();
             };
             timer.Start();
+        }
+
+        private async Task StartTcpListener()
+        {
+            _tcpListener = new TcpListener(IPAddress.Any, 4948);
+            _tcpListener.Start();
+            _isRunning = true;
+            System.Diagnostics.Debug.WriteLine("TCP Listener started on port 4948...");
+
+            while (_isRunning)
+            {
+                try
+                {
+                    TcpClient client = await _tcpListener.AcceptTcpClientAsync();
+                    _ = Task.Run(() => HandleClientAsync(client));
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"TCP Listener error: {ex.Message}");
+                    break;
+                }
+            }
+        }
+
+        private async Task HandleClientAsync(TcpClient client)
+        {
+            try
+            {
+                using (client)
+                using (NetworkStream stream = client.GetStream())
+                {
+                    byte[] buffer = new byte[1024];
+                    int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+                    string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                    var stats = JsonConvert.DeserializeObject<StatsMessage>(message);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        System.Diagnostics.Debug.WriteLine("Updating UI on main thread...");
+                        if (stats.ActivePlayers.HasValue)
+                            ActivePlayerCount = stats.ActivePlayers.Value;
+
+                        if (stats.BiggestMultiplier.HasValue)
+                            BiggestMultiplier = stats.BiggestMultiplier.Value;
+
+                        System.Diagnostics.Debug.WriteLine($"UI Updated: ActivePlayers={ActivePlayerCount}, BiggestMultiplier={BiggestMultiplier}");
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Client handling error: {ex.Message}");
+            }
         }
 
         public class RelayCommand : ICommand
