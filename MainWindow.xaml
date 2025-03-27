@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:RouletteApp.ViewModel"
         xmlns:utils="clr-namespace:RouletteApp.Utils"   
-        Title="Roulette Results" Height="600" Width="800">
-    <Window.DataContext>
-        <vm:MainViewModel />
-    </Window.DataContext>
+        Title="Roulette Results" Height="600" Width="800"
+        MinHeight="600" MinWidth="800"
+        >
     <Window.Resources>
         <utils:OddEvenColorConverter x:Key="OddEvenColorConverter"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -51,11 +50,11 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="5">
                     <TextBlock Text="Active Players" FontWeight="Bold" />
-                    <TextBlock Text="{Binding ActivePlayerCount, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+                    <TextBlock Text="{Binding ActivePlayerCount}" FontSize="16"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="5">
                     <TextBlock Text="Biggest Multiplier" FontWeight="Bold" />
-                    <TextBlock Text="{Binding BiggestMultiplier, StringFormat=x{0}, UpdateSourceTrigger=PropertyChanged}" FontSize="16" />
+                    <TextBlock Text="{Binding BiggestMultiplier, StringFormat=x{0}}" FontSize="16" />
                 </StackPanel>
             </Grid>
         </Border>

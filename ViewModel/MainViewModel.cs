@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -63,7 +64,7 @@ namespace RouletteApp.ViewModel
             {
                 _activePlayerCount = value;
                 OnPropertyChanged(nameof(ActivePlayerCount));
-                System.Diagnostics.Debug.WriteLine($"ActivePlayerCount set to: {value}");
+                Debug.WriteLine($"ActivePlayerCount set to: {value}");
             }
         }
 
@@ -75,7 +76,7 @@ namespace RouletteApp.ViewModel
             {
                 _biggestMultiplier = value;
                 OnPropertyChanged(nameof(BiggestMultiplier));
-                System.Diagnostics.Debug.WriteLine($"BiggestMultiplier set to: {value}");
+                Debug.WriteLine($"BiggestMultiplier set to: {value}");
             }
         }
 
@@ -136,18 +137,18 @@ namespace RouletteApp.ViewModel
             _tcpListener = new TcpListener(IPAddress.Any, 4948);
             _tcpListener.Start();
             _isRunning = true;
-            System.Diagnostics.Debug.WriteLine("TCP Listener started on port 4948...");
-
+            Debug.WriteLine("TCP Listener started on port 4948...");
             while (_isRunning)
             {
                 try
                 {
                     TcpClient client = await _tcpListener.AcceptTcpClientAsync();
                     _ = Task.Run(() => HandleClientAsync(client));
+                    Debug.WriteLine("Client connected...");
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine($"TCP Listener error: {ex.Message}");
+                    Debug.WriteLine($"TCP Listener error: {ex.Message}");
                     break;
                 }
             }
@@ -164,22 +165,26 @@ namespace RouletteApp.ViewModel
                     int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
                     string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                     var stats = JsonConvert.DeserializeObject<StatsMessage>(message);
-                    Application.Current.Dispatcher.Invoke(() =>
+
+                    if (stats != null)
                     {
-                        System.Diagnostics.Debug.WriteLine("Updating UI on main thread...");
-                        if (stats.ActivePlayers.HasValue)
-                            ActivePlayerCount = stats.ActivePlayers.Value;
+                        Application.Current.Dispatcher.Invoke(() =>
+                        {
+                            Debug.WriteLine("Updating UI on main thread...");
+                            if (stats.ActivePlayers.HasValue)
+                                ActivePlayerCount = stats.ActivePlayers.Value;
 
-                        if (stats.BiggestMultiplier.HasValue)
-                            BiggestMultiplier = stats.BiggestMultiplier.Value;
+                            if (stats.BiggestMultiplier.HasValue)
+                                BiggestMultiplier = stats.BiggestMultiplier.Value;
 
-                        System.Diagnostics.Debug.WriteLine($"UI Updated: ActivePlayers={ActivePlayerCount}, BiggestMultiplier={BiggestMultiplier}");
-                    });
+                            Debug.WriteLine($"UI Updated: ActivePlayers={ActivePlayerCount}, BiggestMultiplier={BiggestMultiplier}");
+                        });
+                    }
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"Client handling error: {ex.Message}");
+                Debug.WriteLine($"Client handling error: {ex.Message}");
             }
         }
 
