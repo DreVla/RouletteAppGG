@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "F:\\Assignments\\Game Global\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\viewmodel\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:viewmodel\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,42 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 270,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ViewModelBase.cs",
-              "DocumentMoniker": "F:\\Assignments\\Game Global\\ViewModel\\ViewModelBase.cs",
-              "RelativeDocumentMoniker": "ViewModel\\ViewModelBase.cs",
-              "ToolTip": "F:\\Assignments\\Game Global\\ViewModel\\ViewModelBase.cs",
-              "RelativeToolTip": "ViewModel\\ViewModelBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T14:20:56.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "F:\\Assignments\\Game Global\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "F:\\Assignments\\Game Global\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-26T11:45:29.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
-              "ToolTip": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs",
-              "RelativeToolTip": "ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAwFoAAAAlAAAAAAAAAA==",
+              "ToolTip": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs*",
+              "RelativeToolTip": "ViewModel\\MainViewModel.cs*",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAtwKYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T11:52:32.825Z",
               "EditorCaption": ""
