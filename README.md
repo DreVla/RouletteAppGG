@@ -9,7 +9,7 @@ Windows application that simulates a classic red-black roulette game. It provide
 - 🔗 **TCP Server Integration**: Communicate with clients and process real-time data.
 - 🎨 **UI**: Dimple WPF interface for easy navigation.
 
-![Gameplay Screenshot](screenshots.) <!-- Replace with actual image path -->
+![Gameplay Screenshot](screenshots/ui_screenshot.png) <!-- Replace with actual image path -->
 
 ## Installation
 1. **Clone the Repository:**
