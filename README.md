@@ -13,10 +13,6 @@ Windows application that simulates a classic red-black roulette game. It provide
 
 ## Installation
 1. **Clone the Repository:**
-   ```sh
-   git clone https://github.com/yourusername/roulette-simulator.git
-   cd roulette-simulator
-   ```
 2. **Build the Project:**
    - Open `RouletteApp.sln` in Visual Studio.
    - Set the startup project to `RouletteApp`.
