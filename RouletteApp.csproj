@@ -6,7 +6,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
+  
 
   <ItemGroup>
     <Folder Include="Services\" />

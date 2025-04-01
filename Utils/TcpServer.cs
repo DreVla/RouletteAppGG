@@ -33,6 +33,12 @@ namespace RouletteApp.Utils
             Task.Run(AcceptClientsAsync);
         }
 
+        public void Stop()
+        {
+            _isRunning = false;
+            _tcpListener.Stop();
+        }
+
         private async Task AcceptClientsAsync()
         {
             while (_isRunning)

@@ -20,7 +20,7 @@ using RouletteApp.Utils;
 
 namespace RouletteApp.ViewModel
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase, IDisposable
     {
         private Random _random = new Random();
         private readonly TcpServer _tcpServer;
@@ -179,6 +179,11 @@ namespace RouletteApp.ViewModel
             }
 
             return "Black";
+        }
+
+        public void Dispose()
+        {
+            _tcpServer.Stop();
         }
     }
 }
