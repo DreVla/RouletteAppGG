@@ -15,20 +15,12 @@
       "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\test\\tcpservertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:test\\tcpservertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\utils\\oddevencolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:utils\\oddevencolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|f:\\assignments\\game global\\utils\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DA59A7-3B4F-4D56-8B2F-7AD6DE0B4FC1}|RouletteApp.csproj|solutionrelative:utils\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,14 +40,14 @@
               "RelativeDocumentMoniker": "obj\\Debug\\net8.0-windows\\App.g.cs",
               "ToolTip": "F:\\Assignments\\Game Global\\obj\\Debug\\net8.0-windows\\App.g.cs",
               "RelativeToolTip": "obj\\Debug\\net8.0-windows\\App.g.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T13:56:11.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "OddEvenColorConverter.cs",
               "DocumentMoniker": "F:\\Assignments\\Game Global\\Utils\\OddEvenColorConverter.cs",
               "RelativeDocumentMoniker": "Utils\\OddEvenColorConverter.cs",
@@ -64,30 +56,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T13:40:07.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TcpServerTest.cs",
-              "DocumentMoniker": "F:\\Assignments\\Game Global\\Test\\TcpServerTest.cs",
-              "RelativeDocumentMoniker": "Test\\TcpServerTest.cs",
-              "ToolTip": "F:\\Assignments\\Game Global\\Test\\TcpServerTest.cs",
-              "RelativeToolTip": "Test\\TcpServerTest.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAqwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:33:47.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TcpServer.cs",
-              "DocumentMoniker": "F:\\Assignments\\Game Global\\Utils\\TcpServer.cs",
-              "RelativeDocumentMoniker": "Utils\\TcpServer.cs",
-              "ToolTip": "F:\\Assignments\\Game Global\\Utils\\TcpServer.cs",
-              "RelativeToolTip": "Utils\\TcpServer.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:28:02.966Z"
             },
             {
               "$type": "Document",
@@ -115,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "F:\\Assignments\\Game Global\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
@@ -123,7 +91,8 @@
               "RelativeToolTip": "ViewModel\\MainViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T11:52:32.825Z"
+              "WhenOpened": "2025-03-26T11:52:32.825Z",
+              "EditorCaption": ""
             }
           ]
         }
