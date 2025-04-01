@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -15,13 +16,14 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using Newtonsoft.Json;
 using RouletteApp.Model;
+using RouletteApp.Utils;
 
 namespace RouletteApp.ViewModel
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase, IDisposable
     {
         private Random _random = new Random();
-        private TcpListener _tcpListener;
+        private readonly TcpServer _tcpServer;
         private bool _isRunning;
 
         public ObservableCollection<RouletteResult> _results { get; set; } = new ObservableCollection<RouletteResult>();
@@ -87,7 +89,8 @@ namespace RouletteApp.ViewModel
         {
             AddResultCommand = new RelayCommand(AddResult);
             ShowNotificationCommand = new RelayCommand(ShowNotification);
-            Task.Run(StartTcpListener);
+            _tcpServer = new TcpServer(4948, UpdateStats);
+            _tcpServer.Start();
         }
 
         private void AddResult()
@@ -132,60 +135,16 @@ namespace RouletteApp.ViewModel
             timer.Start();
         }
 
-        private async Task StartTcpListener()
+        private void UpdateStats(StatsMessage stats)
         {
-            _tcpListener = new TcpListener(IPAddress.Any, 4948);
-            _tcpListener.Start();
-            _isRunning = true;
-            Debug.WriteLine("TCP Listener started on port 4948...");
-            while (_isRunning)
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                try
-                {
-                    TcpClient client = await _tcpListener.AcceptTcpClientAsync();
-                    _ = Task.Run(() => HandleClientAsync(client));
-                    Debug.WriteLine("Client connected...");
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"TCP Listener error: {ex.Message}");
-                    break;
-                }
-            }
-        }
+                if (stats.ActivePlayers.HasValue)
+                    ActivePlayerCount = stats.ActivePlayers.Value;
 
-        private async Task HandleClientAsync(TcpClient client)
-        {
-            try
-            {
-                using (client)
-                using (NetworkStream stream = client.GetStream())
-                {
-                    byte[] buffer = new byte[1024];
-                    int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
-                    string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    var stats = JsonConvert.DeserializeObject<StatsMessage>(message);
-
-                    if (stats != null)
-                    {
-                        Application.Current.Dispatcher.Invoke(() =>
-                        {
-                            Debug.WriteLine("Updating UI on main thread...");
-                            if (stats.ActivePlayers.HasValue)
-                                ActivePlayerCount = stats.ActivePlayers.Value;
-
-                            if (stats.BiggestMultiplier.HasValue)
-                                BiggestMultiplier = stats.BiggestMultiplier.Value;
-
-                            Debug.WriteLine($"UI Updated: ActivePlayers={ActivePlayerCount}, BiggestMultiplier={BiggestMultiplier}");
-                        });
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Client handling error: {ex.Message}");
-            }
+                if (stats.BiggestMultiplier.HasValue)
+                    BiggestMultiplier = stats.BiggestMultiplier.Value;
+            });
         }
 
         public class RelayCommand : ICommand
@@ -220,6 +179,11 @@ namespace RouletteApp.ViewModel
             }
 
             return "Black";
+        }
+
+        public void Dispose()
+        {
+            _tcpServer.Stop();
         }
     }
 }

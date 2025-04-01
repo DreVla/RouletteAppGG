@@ -1,7 +1,7 @@
 ﻿RouletteApp
 
 
-winexe
+exe
 C#
 .cs
 F:\Assignments\Game Global\obj\Debug\net8.0-windows\
@@ -11,9 +11,9 @@ false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 F:\Assignments\Game Global\App.xaml
 11407045341
-
-91326212069
-205-1954871199
+2-761830710
+111729760981
+214-103198516
 MainWindow.xaml;
 
 False
