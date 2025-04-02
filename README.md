@@ -33,8 +33,6 @@ Windows application that simulates a classic red-black roulette game. It provide
 4. Click "Show notification" to display hardcoded notification.
 5. View results and streak multipliers.
 
-![UI Screenshot](path/to/ui_screenshot.png) <!-- Replace with actual image path -->
-
 ## Testing
 This project includes unit tests using `xUnit`.
 To run tests:
